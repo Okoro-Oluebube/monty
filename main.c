@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
 {
 	char buff[1000];
 	FILE *file;
+	int num;
 
 	if (argc != 2)
 	{
@@ -26,12 +27,21 @@ int main(int argc, char *argv[])
 	{
 		while ((fgets(buff, sizeof(buff), file)) != NULL)
 		{
-			if (strcmp(buff, "push") == 0)
+			if (strstr(buff, "push") != NULL)
 			{
-				printf("%s\n", buff);
+				if (sscanf(buff, "%*s %d", &num) == 1)
+				{
+					push(num);
+				}
+				else
+				{
+					printf("ERROR\n");
+				}
 			}
 			else
-				printf("ERROR\n");
+			{
+				sscanf(buff, "%*s %d", &num);
+			}
 		}
 	}
 	return (0);

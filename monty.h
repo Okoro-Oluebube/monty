@@ -37,4 +37,7 @@ typedef struct instruction_s
 
 
 
+
+stack_t push(int a);
+
 #endif /*MONTY_H*/
