@@ -15,4 +15,17 @@ void main(int argc, char *argv)
 		return (EXIT_FAILURE);
 	}
 	file = fopen(argv[1] "r");
+	if (file == NULL)
+	{
+		printf("Error: Can't open file %s\n", argv[1]);
+		return (EXIT_FAILURE);
+	}
+	else
+	{
+		while (file != EOF)
+		{
+			fgets(buff, buff_size, file);
+			strtok,getline;
+		}
+	}
 }
