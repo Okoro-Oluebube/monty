@@ -38,6 +38,7 @@ typedef struct instruction_s
 
 
 
-stack_t push(int a);
+stack_t *push(int a);
+size_t print_stack(const stack_t *h);
 
 #endif /*MONTY_H*/

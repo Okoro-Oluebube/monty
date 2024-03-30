@@ -5,7 +5,7 @@
  * Return: stack_t.
  */
 
-stack_t push(int a)
+stack_t *push(int a)
 {
 	stack_t *head, *new;
 

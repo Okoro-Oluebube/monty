@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
 	char buff[1000];
 	FILE *file;
 	int num;
+	stack_t *head = NULL;
 
 	if (argc != 2)
 	{
@@ -31,7 +32,8 @@ int main(int argc, char *argv[])
 			{
 				if (sscanf(buff, "%*s %d", &num) == 1)
 				{
-					push(num);
+					head = push(num);
+					print_stack(head);
 				}
 				else
 				{
@@ -44,5 +46,6 @@ int main(int argc, char *argv[])
 			}
 		}
 	}
+	fclose(file);
 	return (0);
 }
